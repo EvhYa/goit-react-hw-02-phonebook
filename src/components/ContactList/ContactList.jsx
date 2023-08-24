@@ -1,6 +1,7 @@
-import { Container, List } from "./ContactList.styled";
+import { Container, List } from './ContactList.styled';
+import PropTypes from 'prop-types';
 
-export function ContactList({ contacts, removeItem}) {
+export function ContactList({ contacts, removeItem }) {
   return (
     <Container>
       {contacts.length ? (
@@ -8,7 +9,9 @@ export function ContactList({ contacts, removeItem}) {
           {contacts.map(({ id, name, number }) => (
             <li key={id}>
               {name} tel: {number}
-              <button id={id} type="button" onClick={removeItem}>Delete</button>
+              <button id={id} type="button" onClick={removeItem}>
+                Delete
+              </button>
             </li>
           ))}
         </List>
@@ -18,3 +21,8 @@ export function ContactList({ contacts, removeItem}) {
     </Container>
   );
 }
+
+ContactList.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  removeItem: PropTypes.func.isRequired,
+};

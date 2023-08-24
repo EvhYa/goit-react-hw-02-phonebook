@@ -1,4 +1,5 @@
-import { Container } from "./Filter.styled";
+import { Container } from './Filter.styled';
+import PropTypes from 'prop-types';
 
 export function Filter({ filter, handleChange }) {
   return (
@@ -16,3 +17,8 @@ export function Filter({ filter, handleChange }) {
     </Container>
   );
 }
+
+Filter.propTypes = {
+  filter: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+};

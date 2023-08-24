@@ -1,4 +1,5 @@
-import { Button, Container, Form } from "./ContactForm.styled";
+import { Button, Container, Form } from "./ContactForm.styled"; 
+import PropTypes from 'prop-types';
 
 export function ContactForm({handleSubmit}) {
   return (
@@ -31,3 +32,7 @@ export function ContactForm({handleSubmit}) {
     </Container>
   );
 }
+
+ContactForm.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+};
