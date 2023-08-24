@@ -9,7 +9,7 @@ export function ContactList({ contacts, removeItem }) {
           {contacts.map(({ id, name, number }) => (
             <li key={id}>
               {name} tel: {number}
-              <button id={id} type="button" onClick={removeItem}>
+              <button type="button" onClick={() => removeItem(id)}>
                 Delete
               </button>
             </li>
